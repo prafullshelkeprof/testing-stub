@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App is loaded</h1>'
+                        templateUrl: 'views/hello-world.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

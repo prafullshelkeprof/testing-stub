@@ -1,11 +1,12 @@
 import {Component} from 'angular2/core';
-interface Hero {
-	id: number;
-	name: string;
-}
+import {Hero} from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
+
+
 @Component({
     selector: 'my-app',
 	templateUrl: 'views/tour-of-heroes.html',
+	directives: [HeroDetailComponent],
 	styles:[
 			  `.selected {
 			    background-color: #CFD8DC !important;

@@ -1,7 +1,17 @@
 import {Component} from 'angular2/core';
-
+interface Hero {
+	id: number;
+	name: string;
+}
 @Component({
     selector: 'my-app',
-	templateUrl: 'views/hello-world.html'  
+	templateUrl: 'views/tour-of-heroes.html'  
 })
-export class AppComponent { }
+export class AppComponent { 
+	public title = 'Tour of Heroes';
+
+	public hero :Hero = {
+		id:1,
+		name:'Windstorm'
+	}
+}

@@ -1,6 +1,6 @@
-import {Hero} from '../app/hero';
+import {Hero} from '../components/hero';
 export var HEROES: Hero[] = [
-	{ "id": 11, "name": "Mr. Nice" },
+	{ "id": 11, "name": "Mr. Dum dum" },
     { "id": 12, "name": "Narco" },
     { "id": 13, "name": "Bombasto" },
     { "id": 14, "name": "Celeritas" },

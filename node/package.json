@@ -1,0 +1,7 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node js/start.js"
+  }
+}

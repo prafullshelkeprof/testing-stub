@@ -18,9 +18,7 @@ var vm = new Vue({
 
     // Anything within the ready function will run when the application loads
     mounted: function() {
-        console.log('ready function getting called');
         this.fetchEvents();
-        console.log(this.addEvent);
     },
 
     // Methods we want to use in our application are registered here

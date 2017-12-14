@@ -9,7 +9,6 @@ gulp.task('buildApp', () => {
         gulp.src('./index.html'),
         copy('dist/')
     ]);
-    console.log('run copy code');
 })
 gulp.task('uglifyJs', () => {
     pump([
@@ -17,6 +16,5 @@ gulp.task('uglifyJs', () => {
         uglify(),
         gulp.dest('dist')
     ]);
-    console.log('i will minify files here');
 });
 gulp.task('default', ['buildApp', 'uglifyJs']);

@@ -9,9 +9,8 @@
  }
 
  form {
-     background: #000;
+     top: 0px;
      padding: 3px;
-     position: fixed;
      bottom: 0;
      width: 100%;
  }
@@ -43,3 +42,6 @@
  #messages li:nth-child(odd) {
      background: #eee;
  }
+.emoji-menu .emoji-items-wrap {
+  overflow: auto;
+}

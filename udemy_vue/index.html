@@ -12,6 +12,7 @@
         <input type="text" v-on:input="changeTitle">
         <h1 v-once>{{title}}</h1>
         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+        <p v-html="finishedLink"></p>
     </div>
     <script type="text/javascript" src="./app.js"></script>
 </body>

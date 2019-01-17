@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>ec-component-loader with maas token</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://mwc-cdn.morningstar.com/lib/ec-component-loader/0/dist/ec-component-loader.min.js"></script>
+  <style>
+    .component-container {
+      margin-bottom: 20px;
+    }
+
+    #marketChart-container {
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="marketChart-container" class="component-container"></div>
+
+  <script>
+    var appConfig = {
+      settings: {},
+      components: {
+        marketChart: {
+          type: "markets-components-svgchart",
+          version: "*", // only for testing to use latest version, for using on production, please specify the version number like ~x.x.x
+          settings: {}
+        }
+      },
+      labels: {}
+    };
+    var loaderConfig = {
+      apiTokens: {
+        apiGatewayToken: "eyJraWQiOiJTc1dTT0tHNWVYUVZBV0hJRG1MajlYaVA4bFJRckEybE0zamZJemJyZWM4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2ZmIyMWMyOS1iOTg1LTRiZTktYmE0NS1hODYyZjg3YjliMzQiLCJldmVudF9pZCI6IjJiYzUwYjkzLTE5ODEtMTFlOS05MWJjLTNmYjQ3YTFiZDQwNCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NDc2Mzc4MTgsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX2wweE9GYTZnUSIsImV4cCI6MTU0NzY0MTQxOCwiaWF0IjoxNTQ3NjM3ODE4LCJqdGkiOiIzZTFlMDZiZS02ODZkLTQzZDctYmEyMS0xYzE0MzgwODA4ODAiLCJjbGllbnRfaWQiOiI3Y2Jlbmo5cWN2dTBzZjhiMjdxcjBncGVnbCIsInVzZXJuYW1lIjoiQkt3UG1UOFJJWmQwZVlLZWhjS2R5aVBHRGR6TzBuNWgifQ.pF_dwsJKjJX9k7DV4BmN9zaEKWtmxE1sJU2l1LAlHuiiyWURfuHzkcZ7CW_n-tY7Io9vH1cWjZvcUTuyOrxQRhP5Phgm-WrPamWZU9T1-45QKQGkcTB4tI5d4g2FW7MOGBGFWaRFOZ_wUsn6gyDyxqbft-w03CJkVHgaC4q2pEC73anMDhp9qqpT5swCtUyzB_ijsh4H_nAKzX0wzYIibPLAmf3Nmd019IXojRfH5vGjRQESmt27mfw7izp9Ho464X1D8l1vIRi1NRgSLVSJE-Fcs1qwyvTWDiMbz1hI6xWwy6xpypkbqfT3Pm0YQ6MhHPxlzfApoZAmO85SSUt9EQ"
+      },
+      configuration: {
+        source: {
+          type: "none"
+        },
+        overrides: appConfig
+      },
+      componentSource: {
+        type: "qs",
+        instid: "QSDEMO", // need change to use instid of client
+        environment: "uat" // need change to prod if using for production
+      },
+      runtime: {
+        environment: "uat" // need change to prod if using for production
+      }
+    };
+
+    morningstar.loader
+      .load(loaderConfig)
+      .then(function (manifest) {
+        // init market chart component
+        var marketChartComponent = morningstar.initComponent("marketChart", {
+          container: document.getElementById("marketChart-container")
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  </script>
+</body>
+
+</html>
